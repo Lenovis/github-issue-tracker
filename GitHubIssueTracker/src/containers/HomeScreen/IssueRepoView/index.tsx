@@ -9,16 +9,15 @@ import { RouteNames } from '../../../routes/RouteNames';
 export const IssueRepoView = () => {
   const { navigate } = useNavigation();
 
+  const handelSubit = (value: { repo: string }) => {
+    console.log(value);
+    navigate(RouteNames.IssueScreen);
+  };
+
   return (
     <Container>
       <HeaderText text="Enter repo name" />
-      <Formik
-        initialValues={{ repo: '' }}
-        onSubmit={value => {
-          console.log(value);
-          navigate(RouteNames.IssueScreen);
-        }}
-      >
+      <Formik initialValues={{ repo: '' }} onSubmit={handelSubit}>
         {({ handleChange, handleSubmit, values }) => (
           <View>
             <InputContainer>
