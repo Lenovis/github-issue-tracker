@@ -8,16 +8,29 @@
  * @format
  */
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './assets/theme';
+import { StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import styled, { ThemeProvider } from 'styled-components';
+import { theme as importedTheme } from './assets/theme';
 import Navigator from './routes/Navigator';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Navigator />
+    <ThemeProvider theme={importedTheme}>
+      <Container>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor={importedTheme.colors.backgroundColor}
+        />
+        <Navigator />
+      </Container>
     </ThemeProvider>
   );
 };
 
 export default App;
+
+const Container = styled(SafeAreaView)`
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  flex: 1;
+`;
