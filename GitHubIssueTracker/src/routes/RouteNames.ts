@@ -1,4 +1,5 @@
 export const RouteNames = {
-  Home: 'Home',
-  Repo: 'Repo',
+  HomeScreen: 'HomeScreen',
+  RepoScreen: 'RepoScreen',
+  IssueScreen: 'IssueScreen',
 } as const;

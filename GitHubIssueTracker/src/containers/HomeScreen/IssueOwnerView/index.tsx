@@ -11,7 +11,7 @@ export const IssueOwnerView = () => {
   return (
     <Container>
       <Text>Issue owner screen</Text>
-      <TouchableOpacity onPress={() => navigate(RouteNames.Repo)}>
+      <TouchableOpacity onPress={() => navigate(RouteNames.RepoScreen)}>
         <Text>Next page</Text>
       </TouchableOpacity>
     </Container>
@@ -20,5 +20,4 @@ export const IssueOwnerView = () => {
 
 const Container = styled.View`
   flex: 1;
-  background-color: red;
 `;

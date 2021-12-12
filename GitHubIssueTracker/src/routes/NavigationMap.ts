@@ -1,6 +1,7 @@
 import { RouteNames } from './RouteNames';
 
 export type NavigationMap = {
-  [RouteNames.Home]: undefined;
-  [RouteNames.Repo]: undefined;
+  [RouteNames.HomeScreen]: undefined;
+  [RouteNames.RepoScreen]: undefined;
+  [RouteNames.IssueScreen]: undefined;
 };
