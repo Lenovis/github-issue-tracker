@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import React from 'react';
 import { View } from 'react-native';
 import styled from 'styled-components/native';
-import { DefaultButton } from '../../../components/buttons/DefaultButton';
+import { HeaderText, DefaultButton } from '../../../components';
 import { RouteNames } from '../../../routes/RouteNames';
 
 export const IssueOwnerView = () => {
@@ -11,6 +11,7 @@ export const IssueOwnerView = () => {
 
   return (
     <Container>
+      <HeaderText text="Enter repo owner name" />
       <Formik
         initialValues={{ owner: '' }}
         onSubmit={value => {
