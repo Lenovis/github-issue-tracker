@@ -8,10 +8,16 @@
  * @format
  */
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './assets/theme';
 import Navigator from './routes/Navigator';
 
 const App = () => {
-  return <Navigator />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Navigator />
+    </ThemeProvider>
+  );
 };
 
 export default App;

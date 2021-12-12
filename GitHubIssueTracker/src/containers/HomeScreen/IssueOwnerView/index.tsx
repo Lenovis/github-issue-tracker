@@ -20,4 +20,5 @@ export const IssueOwnerView = () => {
 
 const Container = styled.View`
   flex: 1;
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
 `;
