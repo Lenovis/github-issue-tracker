@@ -7,11 +7,26 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rm -rf node_modules && yarn install && cd ios && rm -rf Pods && pod install && cd ../android && ./gradlew clean",
+    "clean-android": "cd android && ./gradlew clean cleanBuildCache",
+    "clean-ios": "cd ios && pod deintegrate && pod install"
   },
   "dependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.6",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "@react-navigation/stack": "^6.0.11",
+    "@types/styled-components": "^5.1.17",
+    "@types/styled-components-react-native": "^5.1.3",
+    "babel-plugin-styled-components": "^2.0.2",
+    "formik": "^2.2.9",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "0.66.3",
+    "react-native-gesture-handler": "^2.1.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -29,7 +44,8 @@
   },
   "resolutions": {
     "@types/react": "^17",
-    "ansi-regex": "^5.0.1"
+    "ansi-regex": "^5.0.1",
+    "styled-components": "^5"
   },
   "jest": {
     "preset": "react-native",
