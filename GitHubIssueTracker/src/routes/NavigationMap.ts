@@ -1,4 +1,4 @@
-import {RouteNames} from './RouteNames';
+import { RouteNames } from './RouteNames';
 
 export type NavigationMap = {
   [RouteNames.Home]: undefined;

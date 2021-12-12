@@ -1,12 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {Text} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
-import {RouteNames} from '../../../routes/RouteNames';
+import { RouteNames } from '../../../routes/RouteNames';
 
 export const IssueOwnerView = () => {
-  const {navigate} = useNavigation();
+  const { navigate } = useNavigation();
 
   return (
     <Container>

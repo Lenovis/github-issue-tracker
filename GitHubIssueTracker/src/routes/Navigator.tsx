@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '../containers/HomeScreen';
-import {RouteNames} from './RouteNames';
+import { RouteNames } from './RouteNames';
 
 const Routes = () => {
-  const {Navigator, Screen} = createNativeStackNavigator();
+  const { Navigator, Screen } = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
