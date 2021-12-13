@@ -13,6 +13,6 @@ export default class Api {
     return axios.get<T>(url);
   };
 
-  static getRepoIssues = async (owner: string, repo: string) =>
-    Api.get<Issue[] & Status>(`/repos/${owner}/${repo}/issues`);
+  static getRepoIssues = async (owner: string, repo: string, page = 1) =>
+    Api.get<Issue[] & Status>(`repos/${owner}/${repo}/issues?page=${page}`);
 }

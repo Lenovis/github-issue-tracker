@@ -9,3 +9,9 @@ export const getRepoIssues = createAction<IssueRequest>(
 export const setRepoIssues = createAction<Issue>(
   constants.issues.SET_REPO_ISSUES,
 );
+
+export const setRepoOwner = createAction<string>(
+  constants.issues.SET_REPO_OWNER,
+);
+
+export const clearRepoOwner = createAction(constants.issues.CLEAR_REPO_OWNER);

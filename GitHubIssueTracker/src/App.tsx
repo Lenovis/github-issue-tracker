@@ -13,18 +13,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme as importedTheme } from './assets/theme';
 import Navigator from './routes/Navigator';
+import { Provider } from 'react-redux';
+import { configStore } from './state/store';
 
+const { store } = configStore();
 const App = () => {
   return (
-    <ThemeProvider theme={importedTheme}>
-      <Container>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor={importedTheme.colors.backgroundColor}
-        />
-        <Navigator />
-      </Container>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={importedTheme}>
+        <Container>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor={importedTheme.colors.backgroundColor}
+          />
+          <Navigator />
+        </Container>
+      </ThemeProvider>
+    </Provider>
   );
 };
 

@@ -2,29 +2,37 @@ import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
 import React from 'react';
 import { View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components/native';
 import { HeaderText, DefaultButton } from '../../../components';
 import { RouteNames } from '../../../routes/RouteNames';
+import { actions } from '../../../state/actions';
 
 export const IssueOwnerView = () => {
   const { navigate } = useNavigation();
 
+  const dispatch = useDispatch();
+
+  // const defaultOwner = 'Lenovis';
+  const defaultOwner = 'meliorence';
+
+  const onSubmit = (value: { owner: string }) => {
+    dispatch(actions.issues.setRepoOwner(value.owner));
+    navigate(RouteNames.RepoScreen);
+  };
+
   return (
     <Container>
       <HeaderText text="Enter repo owner name" />
-      <Formik
-        initialValues={{ owner: '' }}
-        onSubmit={value => {
-          console.log(value);
-          navigate(RouteNames.RepoScreen);
-        }}
-      >
+      <Formik initialValues={{ owner: defaultOwner }} onSubmit={onSubmit}>
         {({ handleChange, handleSubmit, values }) => (
           <View>
             <InputContainer>
               <Input
                 value={values.owner}
                 onChangeText={handleChange('owner')}
+                autoCorrect={false}
+                autoCapitalize="none"
               />
             </InputContainer>
             <ButtonWrapper>
