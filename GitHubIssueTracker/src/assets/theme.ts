@@ -24,6 +24,7 @@ export const theme = {
     greyAlpha: (alpha = 1) => `rgba(34, 34, 34, ${alpha})`,
     opacity: (hex: string, alpha: number) => `${hex}${HexAlpha[alpha]}`,
     white: '#FFFFFF',
+    lightGrey: '#D3D3D3',
   },
 };
 
