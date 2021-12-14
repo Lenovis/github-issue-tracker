@@ -23,7 +23,7 @@ export const IssueRepoView = () => {
     dispatch(
       actions.issues.getRepoIssues({ owner: repoOwner, repo: value.repo }),
     );
-    // navigate(RouteNames.IssueScreen);
+    navigate(RouteNames.IssueScreen);
   };
 
   return (

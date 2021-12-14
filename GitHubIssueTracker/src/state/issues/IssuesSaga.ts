@@ -14,9 +14,11 @@ function* fetchRepoIssues({
 
     const { owner, repo } = payload;
 
-    const response = yield* call(Api.getRepoIssues, owner, repo);
+    const { data, status } = yield* call(Api.getRepoIssues, owner, repo);
 
-    console.log(response.data);
+    if (status) {
+      yield* put(actions.issues.setRepoIssues(data));
+    }
   } catch (e) {
     console.error(e);
   } finally {
