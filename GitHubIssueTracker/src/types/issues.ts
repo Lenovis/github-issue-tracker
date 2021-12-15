@@ -1,7 +1,10 @@
+import { IssuesState } from '../utils';
+
 export type IssueRequest = {
   owner: string;
   repo: string;
   page?: number;
+  state?: IssuesState;
 };
 
 type IssueOwner = {
@@ -54,11 +57,12 @@ type IssueMilestone = {
   due_on?: Date;
 };
 
-type IssuePullRequest = {
+export type IssuePullRequest = {
   url?: string;
   html_url?: string;
   diff_url?: string;
   patch_url?: string;
+  merged_at?: Date;
 };
 
 type IssueRepositoryLicense = {
@@ -175,7 +179,7 @@ export type Issue = {
   events_url?: string;
   html_url?: string;
   number?: number;
-  state?: string;
+  state: IssuesState;
   title?: string;
   body?: string;
   user: IssueOwner;
@@ -186,7 +190,7 @@ export type Issue = {
   locked?: boolean;
   active_lock_reason?: string;
   comments?: number;
-  pull_request?: IssuePullRequest;
+  pull_request: IssuePullRequest;
   closed_at?: string;
   created_at?: Date;
   updated_at?: Date;

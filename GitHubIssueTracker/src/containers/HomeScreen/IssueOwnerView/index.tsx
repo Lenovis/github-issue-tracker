@@ -17,7 +17,7 @@ export const IssueOwnerView = () => {
   const defaultOwner = 'meliorence';
 
   const onSubmit = (value: { owner: string }) => {
-    dispatch(actions.issues.setRepoOwner(value.owner));
+    dispatch(actions.repo.setRepoOwner(value.owner));
     navigate(RouteNames.RepoScreen);
   };
 

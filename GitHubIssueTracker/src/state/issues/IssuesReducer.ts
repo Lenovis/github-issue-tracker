@@ -1,15 +1,16 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { Issue } from '../../types';
+import { IssuesState } from '../../utils';
 import { actions } from '../actions';
 
 export type IssuesReduserState = {
-  repoOwner: string;
   issues: Issue[];
+  issuesState: IssuesState;
 };
 
 export const INITIAL_STATE: IssuesReduserState = {
-  repoOwner: '',
   issues: [],
+  issuesState: IssuesState.open,
 };
 
 export const issuesReducer = createReducer(INITIAL_STATE, {
@@ -17,11 +18,7 @@ export const issuesReducer = createReducer(INITIAL_STATE, {
     state.issues = payload;
   },
 
-  [actions.issues.setRepoOwner.type]: (state, { payload }) => {
-    state.repoOwner = payload;
-  },
-
-  [actions.issues.clearRepoOwner.type]: state => {
-    state.repoOwner = INITIAL_STATE.repoOwner;
+  [actions.issues.setIssuesState.type]: (state, { payload }) => {
+    state.issuesState = payload;
   },
 });
