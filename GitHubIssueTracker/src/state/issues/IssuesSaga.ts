@@ -14,19 +14,37 @@ function* fetchRepoIssues({
   try {
     yield* put(actions.ui.repoIssuesOnSync(true));
 
-    const { owner, repo, page = 1, state = IssuesState.open } = payload;
+    const { owner, repo, page = 1, state } = payload;
+
+    const issueState = yield* select(selectors.issues.getIssuesState) ||
+      state ||
+      IssuesState.open;
 
     if (repo && owner) {
-      const { data, status } = yield* call(
+      const { data, status, headers } = yield* call(
         Api.getRepoIssues,
         owner,
         repo,
         page,
-        state,
+        issueState,
       );
 
       if (status) {
         yield* put(actions.issues.setRepoIssues(data));
+
+        yield* put(actions.issues.setCurrentIssuesPage(page));
+
+        yield* put(
+          actions.issues.setIssuesHasNextPage(
+            headers.link.includes('rel="next"'),
+          ),
+        );
+
+        yield* put(
+          actions.issues.setIssuesHasPrevPage(
+            headers.link.includes('rel="prev"'),
+          ),
+        );
       }
     } else {
       //TODO: global error
@@ -38,12 +56,7 @@ function* fetchRepoIssues({
   }
 }
 
-function* refetchRepoIssues({
-  payload = 1,
-}: {
-  payload?: number;
-  type: string;
-}) {
+function* refetchRepoIssues() {
   try {
     yield* put(actions.ui.repoIssuesOnSync(true));
     const repo = yield* select(selectors.repo.getRepoName);
@@ -51,8 +64,9 @@ function* refetchRepoIssues({
     const issueState = yield* select(selectors.issues.getIssuesState);
     if (repo && owner) {
       yield* call(fetchRepoIssues, {
-        payload: { repo, owner, state: issueState, page: payload },
+        payload: { repo, owner, state: issueState, page: 1 },
       });
+      yield* put(actions.issues.resetCurrentIssuesPage());
     } else {
       //TODO: global error
     }

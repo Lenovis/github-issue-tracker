@@ -18,6 +18,7 @@ export const IssueRepoView = () => {
   useFocusEffect(
     useCallback(() => {
       dispatch(actions.issues.setIssuesState(IssuesState.open));
+      dispatch(actions.issues.clearIssuesHasNextandPrevPages());
     }, [dispatch]),
   );
 

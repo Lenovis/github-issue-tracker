@@ -14,3 +14,23 @@ export const setRepoIssues = createAction<Issue[]>(
 export const setIssuesState = createAction<IssuesState>(
   constants.issues.SET_ISSUES_STATE,
 );
+
+export const setIssuesHasNextPage = createAction<boolean>(
+  constants.issues.SET_ISSUES_HAS_NEXT_PAGE,
+);
+
+export const setIssuesHasPrevPage = createAction<boolean>(
+  constants.issues.SET_ISSUES_HAS_PREV_PAGE,
+);
+
+export const clearIssuesHasNextandPrevPages = createAction(
+  constants.issues.CLEAR_ISSUES_HAS_NEXT_AND_PREV_PAGES,
+);
+
+export const setCurrentIssuesPage = createAction<number>(
+  constants.issues.SET_CURRENT_ISSUES_PAGE,
+);
+
+export const resetCurrentIssuesPage = createAction(
+  constants.issues.RESET_CURRENT_ISSUES_PAGE,
+);
