@@ -24,7 +24,6 @@ export const theme = {
     buttonGreen: '#438440',
     grey: '#94988e',
     blueGrey: '#171b21',
-    greyAlpha: (alpha = 1) => `rgba(34, 34, 34, ${alpha})`, //is it in use?
     opacity: (hex: string, alpha: number) => `${hex}${HexAlpha[alpha]}`,
     white: '#FFFFFF',
     lightGrey: '#D3D3D3',
