@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-export const HeaderText = ({ text }: { text: String }) => (
+export const HeaderText = ({
+  text,
+  numberOfLines = 1,
+}: {
+  text: String;
+  numberOfLines?: number;
+}) => (
   <HeaderWrapper>
-    <HeaderStyledText>{text}</HeaderStyledText>
+    <HeaderStyledText numberOfLines={numberOfLines}>{text}</HeaderStyledText>
   </HeaderWrapper>
 );
 

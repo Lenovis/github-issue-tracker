@@ -14,17 +14,21 @@ const HexAlpha: { [key: number]: string } = {
 
 export type ThemeType = typeof theme;
 
+export type ThemeColors = typeof theme.colors;
+
 export const theme = {
   colors: {
     backgroundColor: '#0e1120',
     black: '#000000',
     borderColor: '#cad1db',
     buttonGreen: '#438440',
-    gray: '#222222',
-    greyAlpha: (alpha = 1) => `rgba(34, 34, 34, ${alpha})`,
+    grey: '#94988e',
+    blueGrey: '#171b21',
     opacity: (hex: string, alpha: number) => `${hex}${HexAlpha[alpha]}`,
     white: '#FFFFFF',
     lightGrey: '#D3D3D3',
+    purple: '#9a76ef',
+    red: '#f24141',
   },
 };
 
