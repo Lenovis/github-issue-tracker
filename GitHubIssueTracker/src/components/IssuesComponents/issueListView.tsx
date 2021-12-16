@@ -7,10 +7,9 @@ import { actions } from '../../state/actions';
 import { selectors } from '../../state/selectors';
 import { Issue } from '../../types';
 
-export const IssueList = (issues: Issue[]) => {
+const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
   const dispatch = useDispatch();
 
-  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
   const repo = useSelector(selectors.repo.getRepoName);
   const owner = useSelector(selectors.repo.getRepoOwner);
   const issuesCurrentPage = useSelector(selectors.issues.getIssuesCurrentPage);
@@ -36,18 +35,9 @@ export const IssueList = (issues: Issue[]) => {
       }),
     );
   };
-  if (gettingData) {
+
+  if (hasPages) {
     return (
-      <ActivityIndicatorWrapper>
-        <ActivityIndicator size="large" />
-      </ActivityIndicatorWrapper>
-    );
-  }
-  return (
-    <>
-      {issues.map((issue, index) => (
-        <IssuesListItem issue={issue} key={index} />
-      ))}
       <FooterComponent>
         {hasPrevPage ? (
           <PageButtonWrapper>
@@ -65,6 +55,27 @@ export const IssueList = (issues: Issue[]) => {
           <PageButtonWrapper />
         )}
       </FooterComponent>
+    );
+  }
+  return null;
+};
+
+export const IssueList = (issues: Issue[]) => {
+  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
+
+  if (gettingData) {
+    return (
+      <ActivityIndicatorWrapper>
+        <ActivityIndicator size="large" />
+      </ActivityIndicatorWrapper>
+    );
+  }
+  return (
+    <>
+      {issues.map((issue, index) => (
+        <IssuesListItem issue={issue} key={index} />
+      ))}
+      <ListPagination hasPages={issues.length > 0} />
     </>
   );
 };
