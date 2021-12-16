@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
 import { theme as importedTheme } from '../../../assets/theme';
@@ -28,6 +28,14 @@ export const IssueView = () => {
   const handleClosedPress = () => {
     dispatch(actions.issues.setIssuesState(IssuesState.closed));
   };
+
+  const handleIssuesClean = () => {
+    dispatch(actions.issues.clearRepoIssues());
+    dispatch(actions.repo.clearRepoName());
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => handleIssuesClean, []);
 
   const isSelected = (value: IssuesState) => {
     if (value === issueState) {

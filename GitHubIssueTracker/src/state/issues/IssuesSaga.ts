@@ -47,10 +47,13 @@ function* fetchRepoIssues({
         );
       }
     } else {
+      yield* put(actions.messages.setInfoMessage('Someting went wrong'));
       //TODO: global error
     }
   } catch (e) {
-    console.error(e);
+    yield* put(
+      actions.messages.setInfoMessage('This repository does not exists'),
+    );
   } finally {
     yield* put(actions.ui.repoIssuesOnSync(false));
   }
@@ -71,7 +74,7 @@ function* refetchRepoIssues() {
       //TODO: global error
     }
   } catch (e) {
-    console.error(e);
+    yield* put(actions.messages.setInfoMessage('Someting went wrong'));
   } finally {
     yield* put(actions.ui.repoIssuesOnSync(false));
   }

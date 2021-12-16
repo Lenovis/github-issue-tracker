@@ -1,5 +1,6 @@
 export const issuesConstants = {
   GET_REPO_ISSUES: 'issues/GET_REPO_ISSUES',
+  CLEAR_ISSUES: 'issues/CLEAR_ISSUES',
   SET_REPO_ISSUES: 'issues/SET_REPO_ISSUES',
   SET_ISSUES_STATE: 'issues/SET_ISSUES_STATE',
   SET_ISSUES_HAS_NEXT_PAGE: 'issues/SET_ISSUES_HAS_NEXT_PAGE',
