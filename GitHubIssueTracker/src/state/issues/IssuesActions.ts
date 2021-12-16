@@ -36,3 +36,5 @@ export const setCurrentIssuesPage = createAction<number>(
 export const resetCurrentIssuesPage = createAction(
   constants.issues.RESET_CURRENT_ISSUES_PAGE,
 );
+
+export const setIssuesExist = createAction(constants.issues.SET_ISSUES_EXIST);

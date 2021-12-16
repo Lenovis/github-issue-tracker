@@ -12,3 +12,5 @@ export const getIssuesHasNextPage = (state: RootState) =>
 
 export const getIssuesCurrentPage = (state: RootState) =>
   state.issues?.currentIssuesPage;
+
+export const getIssuesExist = (state: RootState) => state.issues?.exist;

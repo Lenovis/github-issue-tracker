@@ -30,27 +30,32 @@ function* fetchRepoIssues({
       );
 
       if (status) {
+        yield* put(actions.issues.setIssuesExist());
+
         yield* put(actions.issues.setRepoIssues(data));
 
         yield* put(actions.issues.setCurrentIssuesPage(page));
 
-        yield* put(
-          actions.issues.setIssuesHasNextPage(
-            headers.link.includes('rel="next"'),
-          ),
-        );
+        if (headers?.link) {
+          yield* put(
+            actions.issues.setIssuesHasNextPage(
+              headers.link.includes('rel="next"'),
+            ),
+          );
 
-        yield* put(
-          actions.issues.setIssuesHasPrevPage(
-            headers.link.includes('rel="prev"'),
-          ),
-        );
+          yield* put(
+            actions.issues.setIssuesHasPrevPage(
+              headers.link.includes('rel="prev"'),
+            ),
+          );
+        }
       }
     } else {
       yield* put(actions.messages.setInfoMessage('Someting went wrong'));
       //TODO: global error
     }
   } catch (e) {
+    console.log(e);
     yield* put(
       actions.messages.setInfoMessage('This repository does not exists'),
     );

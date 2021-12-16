@@ -9,6 +9,7 @@ export type IssuesReduserState = {
   issuesHasNextPage: boolean;
   issuesHasPrevPage: boolean;
   currentIssuesPage: number;
+  exist: boolean;
 };
 
 export const INITIAL_STATE: IssuesReduserState = {
@@ -17,6 +18,7 @@ export const INITIAL_STATE: IssuesReduserState = {
   issuesHasNextPage: false,
   issuesHasPrevPage: false,
   currentIssuesPage: 1,
+  exist: false,
 };
 
 export const issuesReducer = createReducer(INITIAL_STATE, {
@@ -49,5 +51,9 @@ export const issuesReducer = createReducer(INITIAL_STATE, {
 
   [actions.issues.resetCurrentIssuesPage.type]: state => {
     state.currentIssuesPage = INITIAL_STATE.currentIssuesPage;
+  },
+
+  [actions.issues.setIssuesExist.type]: state => {
+    state.exist = true;
   },
 });

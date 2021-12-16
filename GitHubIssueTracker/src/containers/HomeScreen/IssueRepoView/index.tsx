@@ -22,19 +22,19 @@ export const IssueRepoView = () => {
     }, [dispatch]),
   );
 
-  // const defaultIssue = 'github-issue-tracker';
-  const defaultIssue = 'react-native-snap-carousel';
+  const defaultIssue = 'github-issue-tracker';
+  // const defaultIssue = 'react-native-snap-carousel';
 
   const repoOwner = useSelector(selectors.repo.getRepoOwner);
   const issuesState = useSelector(selectors.issues.getIssuesState);
-  const issues = useSelector(selectors.issues.getRepoIssues);
   const isLoading = useSelector(selectors.ui.getRepoIssuesOnSync);
+  const issuesExist = useSelector(selectors.issues.getIssuesExist);
 
   useEffect(() => {
-    if (issues.length > 0) {
+    if (issuesExist) {
       navigate(RouteNames.IssueScreen);
     }
-  }, [issues, navigate]);
+  }, [issuesExist, navigate]);
 
   const onSubmit = (value: { repo: string }) => {
     dispatch(actions.repo.setRepoName(value.repo));

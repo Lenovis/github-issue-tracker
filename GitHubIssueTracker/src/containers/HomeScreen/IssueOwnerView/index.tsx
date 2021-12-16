@@ -13,8 +13,8 @@ export const IssueOwnerView = () => {
 
   const dispatch = useDispatch();
 
-  // const defaultOwner = 'Lenovis';
-  const defaultOwner = 'meliorence';
+  const defaultOwner = 'Lenovis';
+  // const defaultOwner = 'meliorence';
 
   const onSubmit = (value: { owner: string }) => {
     dispatch(actions.repo.setRepoOwner(value.owner));
