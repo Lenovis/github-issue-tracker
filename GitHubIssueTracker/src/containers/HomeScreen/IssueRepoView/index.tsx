@@ -1,6 +1,6 @@
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
@@ -27,6 +27,14 @@ export const IssueRepoView = () => {
 
   const repoOwner = useSelector(selectors.repo.getRepoOwner);
   const issuesState = useSelector(selectors.issues.getIssuesState);
+  const issues = useSelector(selectors.issues.getRepoIssues);
+  const isLoading = useSelector(selectors.ui.getRepoIssuesOnSync);
+
+  useEffect(() => {
+    if (issues.length > 0) {
+      navigate(RouteNames.IssueScreen);
+    }
+  }, [issues, navigate]);
 
   const onSubmit = (value: { repo: string }) => {
     dispatch(actions.repo.setRepoName(value.repo));
@@ -37,7 +45,6 @@ export const IssueRepoView = () => {
         state: issuesState,
       }),
     );
-    navigate(RouteNames.IssueScreen);
   };
 
   return (
@@ -58,7 +65,8 @@ export const IssueRepoView = () => {
               <DefaultButton
                 onPress={handleSubmit}
                 text="Submit"
-                disabled={values.repo ? false : true}
+                disabled={isLoading}
+                isLoading={isLoading}
               />
             </ButtonWrapper>
           </View>

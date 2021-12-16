@@ -7,6 +7,8 @@ export const getRepoIssues = createAction<IssueRequest>(
   constants.issues.GET_REPO_ISSUES,
 );
 
+export const clearRepoIssues = createAction(constants.issues.CLEAR_ISSUES);
+
 export const setRepoIssues = createAction<Issue[]>(
   constants.issues.SET_REPO_ISSUES,
 );

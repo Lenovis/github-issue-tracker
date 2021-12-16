@@ -1,20 +1,27 @@
 import React, { FC } from 'react';
+import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components/native';
 
 export interface DefaultButtonProps {
   onPress?: () => void;
   text: string;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
 export const DefaultButton: FC<DefaultButtonProps> = ({
   onPress,
   text,
   disabled = false,
+  isLoading = false,
 }) => {
   return (
     <Container onPress={onPress} disabled={disabled}>
-      <ButtonText disabled={disabled}>{text}</ButtonText>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <ButtonText disabled={disabled}>{text}</ButtonText>
+      )}
     </Container>
   );
 };

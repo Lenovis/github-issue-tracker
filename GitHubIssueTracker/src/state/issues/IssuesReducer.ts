@@ -24,6 +24,8 @@ export const issuesReducer = createReducer(INITIAL_STATE, {
     state.issues = payload;
   },
 
+  [actions.issues.clearRepoIssues.type]: () => INITIAL_STATE,
+
   [actions.issues.setIssuesState.type]: (state, { payload }) => {
     state.issuesState = payload;
   },
