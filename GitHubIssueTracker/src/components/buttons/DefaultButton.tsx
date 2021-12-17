@@ -3,6 +3,20 @@ import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components/native';
 import { theme } from '../../assets/theme';
 
+export const ButtonContent = ({
+  isLoading,
+  disabled,
+  text,
+}: {
+  isLoading: boolean;
+  disabled: boolean;
+  text: string;
+}) => {
+  if (isLoading) {
+    return <ActivityIndicator />;
+  }
+  return <ButtonText disabled={disabled}>{text}</ButtonText>;
+};
 export interface DefaultButtonProps {
   onPress?: () => void;
   text?: string;
@@ -18,11 +32,7 @@ export const DefaultButton: FC<DefaultButtonProps> = ({
 }) => {
   return (
     <Container onPress={onPress} disabled={disabled}>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <ButtonText disabled={disabled}>{text}</ButtonText>
-      )}
+      <ButtonContent isLoading={isLoading} disabled={disabled} text={text} />
     </Container>
   );
 };
@@ -31,7 +41,7 @@ type ButtonTextProps = {
   disabled: boolean;
 };
 
-const ButtonText = styled.Text<ButtonTextProps>`
+export const ButtonText = styled.Text<ButtonTextProps>`
   font-size: 16px;
   line-height: 24px;
   text-align: center;

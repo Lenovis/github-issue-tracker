@@ -105,6 +105,57 @@ exports[`renders correctly default button 1`] = `
 </View>
 `;
 
+exports[`renders correctly default button dissabled true 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#438440",
+      "borderRadius": 12,
+      "height": 46,
+      "justifyContent": "center",
+      "opacity": 0.5,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+    }
+  }
+>
+  <Text
+    disabled={true}
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "lineHeight": 24,
+          "opacity": 0.5,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
 exports[`renders correctly next button 1`] = `
 <View
   accessibilityState={

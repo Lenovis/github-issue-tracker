@@ -1,5 +1,5 @@
 //Butons
-export * from './buttons/DefaultButton';
+export { DefaultButton } from './buttons/DefaultButton';
 export * from './buttons/BackButton';
 export * from './buttons/NextButton';
 //Texts
