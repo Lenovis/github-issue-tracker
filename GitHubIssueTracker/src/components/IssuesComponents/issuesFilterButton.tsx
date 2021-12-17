@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { theme } from '../../assets/theme';
 
 export const FilterButton = ({
   text,
@@ -43,7 +44,7 @@ type StyledButtonTextProps = {
 };
 
 const StyledButtonText = styled.Text<StyledButtonTextProps>`
-  color: ${({ theme, selected }) =>
+  color: ${({ selected }) =>
     selected ? theme.colors.white : theme.colors.grey};
   font-weight: bold;
 `;
