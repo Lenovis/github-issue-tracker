@@ -4,6 +4,7 @@ import React, { useCallback, useEffect } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
+import { theme } from '../../../assets/theme';
 import { HeaderText, DefaultButton } from '../../../components';
 import { RouteNames } from '../../../routes/RouteNames';
 import { actions } from '../../../state/actions';
@@ -78,7 +79,7 @@ export const IssueRepoView = () => {
 
 const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  background-color: ${theme.colors.backgroundColor};
   padding: 16px;
 `;
 
@@ -89,7 +90,7 @@ const Input = styled.TextInput`
 `;
 
 const InputContainer = styled.View`
-  background-color: ${({ theme }) => theme.colors.borderColor};
+  background-color: ${theme.colors.borderColor};
   border-radius: 12px;
   border-width: 1px;
   flex-direction: row;

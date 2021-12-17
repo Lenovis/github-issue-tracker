@@ -10,11 +10,11 @@ import { IssuePullRequest } from '../../types';
 import { IssuesState } from '../../utils';
 
 export const IssueListItemImage = ({
-  state,
-  pull_request,
+  state = IssuesState.open,
+  pull_request = null,
 }: {
-  state: IssuesState;
-  pull_request: IssuePullRequest;
+  state?: IssuesState;
+  pull_request?: IssuePullRequest | null;
 }) => {
   if (state !== IssuesState.closed) {
     if (pull_request) {

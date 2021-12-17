@@ -3,6 +3,7 @@ import { ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
 import { BackButton, IssuesListItem, NextButton } from '..';
+import { theme } from '../../assets/theme';
 import { actions } from '../../state/actions';
 import { selectors } from '../../state/selectors';
 import { Issue } from '../../types';
@@ -94,7 +95,7 @@ const FooterComponent = styled.View`
 `;
 
 const PageText = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${theme.colors.white};
   font-weight: bold;
 `;
 

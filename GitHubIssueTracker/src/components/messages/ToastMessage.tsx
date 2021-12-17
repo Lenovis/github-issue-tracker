@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components/native';
+import { theme } from '../../assets/theme';
 import { actions } from '../../state/actions';
 
 export const ToastMessage = ({
@@ -41,14 +42,14 @@ export const ToastMessage = ({
 };
 
 const InfoMessageText = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${theme.colors.white};
   padding: 0px 10px;
   text-align: center;
 `;
 
 const ToastWrapper = styled.View`
   align-self: center;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${theme.colors.black};
   border-radius: 100px;
   justify-content: center;
   min-height: 32px;

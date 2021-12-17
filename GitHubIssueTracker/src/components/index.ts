@@ -10,5 +10,6 @@ export * from './Icons';
 export * from './IssuesComponents/listItem';
 export * from './IssuesComponents/issuesFilterButton';
 export * from './IssuesComponents/issueListView';
+export * from './IssuesComponents/issueListItemIcon';
 //InfoMessage
 export * from './messages/ToastMessage';
