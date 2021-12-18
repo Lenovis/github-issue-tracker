@@ -5,7 +5,7 @@ It's a GitHub issue tracker app made with React Native.
 The app consists of 3 main screens: 
 * First one is the repository owner screen. Here you need to enter the GitHub repository owner name. 
 * Second one is the repository input field. Here you need to enter that organization's repository name. Once you click submit the API call to GitHub is fired and Saga listeners are waiting to fetch data from the response. If the request was successful (200 OK) repository info is loaded to the third app screen. If not, the user receives a popup info message, that something went wrong. 
-* On the app third screen you will see a list of repository closed issues. On the top of the list, you will see the selection for open and closed repository issues. The open repository issues tab contains opened issues and pull requests. The closed repository issues tab contains closed issues, merge requests and cancelled merge requests. The bottom of the list has pagination.
+* On the app third screen you will see a list of repository closed issues. On the top of the list, you will see the selection for open and closed repository issues. The open repository issues tab contains opened issues, pull requests and pull request drafts. The closed repository issues tab contains closed issues, merge requests and cancelled merge requests. The bottom of the list has pagination.
 
 # 📱First app screen, repository owner input
 Screen contains:
