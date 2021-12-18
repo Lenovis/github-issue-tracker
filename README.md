@@ -33,8 +33,7 @@ Screen contains:
 <img src="https://user-images.githubusercontent.com/40159680/146635983-cc6a2b0a-d872-48be-88dd-5f72ffac94ff.png" width="350"/>
 
 # ⚠️ Must TODO:
-* 👷 App testing;
-* 👷 Full app documentation.
+* 👷 App testing.
 
 # 🎨 Things to improve:
 * Use theme provider from styled-components. Now removed for app testing;
