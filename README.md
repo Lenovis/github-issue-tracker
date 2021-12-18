@@ -30,7 +30,9 @@ Screen contains:
 * List selection of open or closed issues;
 * Navigation through issues pages. Arrows appear only if the next or previous page exists;
 * List is made of 30 elements per page;
+<img src="https://user-images.githubusercontent.com/40159680/146636451-7695a73b-0144-4d1f-b192-f474f4111c97.png" width="350"/>
 <img src="https://user-images.githubusercontent.com/40159680/146635983-cc6a2b0a-d872-48be-88dd-5f72ffac94ff.png" width="350"/>
+
 
 # ⚠️ Must TODO:
 * 👷 App testing.
