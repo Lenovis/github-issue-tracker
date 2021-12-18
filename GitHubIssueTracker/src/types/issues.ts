@@ -196,4 +196,5 @@ export type Issue = {
   updated_at?: Date;
   repository?: IssueRepository;
   author_association?: string;
+  draft?: boolean;
 };

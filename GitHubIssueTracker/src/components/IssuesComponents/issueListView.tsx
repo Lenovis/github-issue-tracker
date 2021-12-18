@@ -8,6 +8,38 @@ import { actions } from '../../state/actions';
 import { selectors } from '../../state/selectors';
 import { Issue } from '../../types';
 
+export const FooterComponentView = ({
+  hasPrevPage,
+  hasNextPage,
+  handleBackPress,
+  handleNextPress,
+  issuesCurrentPage,
+}: {
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  handleBackPress?: () => void;
+  handleNextPress?: () => void;
+  issuesCurrentPage: number;
+}) => (
+  <FooterComponent>
+    {hasPrevPage ? (
+      <PageButtonWrapper>
+        <BackButton onPress={handleBackPress} />
+      </PageButtonWrapper>
+    ) : (
+      <PageButtonWrapper />
+    )}
+    <PageText>{`${issuesCurrentPage} page`}</PageText>
+    {hasNextPage ? (
+      <PageButtonWrapper>
+        <NextButton onPress={handleNextPress} />
+      </PageButtonWrapper>
+    ) : (
+      <PageButtonWrapper />
+    )}
+  </FooterComponent>
+);
+
 const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
   const dispatch = useDispatch();
 
@@ -39,31 +71,19 @@ const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
 
   if (hasPages) {
     return (
-      <FooterComponent>
-        {hasPrevPage ? (
-          <PageButtonWrapper>
-            <BackButton onPress={handleBackPress} />
-          </PageButtonWrapper>
-        ) : (
-          <PageButtonWrapper />
-        )}
-        <PageText>{`${issuesCurrentPage} page`}</PageText>
-        {hasNextPage ? (
-          <PageButtonWrapper>
-            <NextButton onPress={handleNextPress} />
-          </PageButtonWrapper>
-        ) : (
-          <PageButtonWrapper />
-        )}
-      </FooterComponent>
+      <FooterComponentView
+        hasNextPage={hasNextPage}
+        hasPrevPage={hasPrevPage}
+        handleNextPress={handleNextPress}
+        handleBackPress={handleBackPress}
+        issuesCurrentPage={issuesCurrentPage}
+      />
     );
   }
   return null;
 };
 
-export const IssueList = (issues: Issue[]) => {
-  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
-
+export const handleIssuesList = (gettingData: boolean, issues: Issue[]) => {
   if (gettingData) {
     return (
       <ActivityIndicatorWrapper>
@@ -79,6 +99,12 @@ export const IssueList = (issues: Issue[]) => {
       <ListPagination hasPages={issues.length > 0} />
     </>
   );
+};
+
+export const IssueList = (issues: Issue[]) => {
+  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
+
+  return handleIssuesList(gettingData, issues);
 };
 
 const ActivityIndicatorWrapper = styled.View`

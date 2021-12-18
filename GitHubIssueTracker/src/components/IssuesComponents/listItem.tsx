@@ -7,7 +7,7 @@ import { IssueListItemImage } from './issueListItemIcon';
 import { theme } from '../../assets/theme';
 
 export const IssuesListItem = ({ issue }: { issue: Issue }) => {
-  const { title, number, user, pull_request, created_at, state } = issue;
+  const { title, number, user, pull_request, created_at, state, draft } = issue;
 
   const { login: userLogin } = user;
 
@@ -20,7 +20,11 @@ export const IssuesListItem = ({ issue }: { issue: Issue }) => {
   return (
     <Container>
       <IconWrapper>
-        <IssueListItemImage state={state} pull_request={pull_request} />
+        <IssueListItemImage
+          state={state}
+          pull_request={pull_request}
+          draft={draft}
+        />
       </IconWrapper>
       <InfoWrapper>
         <HeaderWeapper>

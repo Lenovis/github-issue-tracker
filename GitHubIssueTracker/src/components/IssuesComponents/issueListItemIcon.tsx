@@ -12,11 +12,16 @@ import { IssuesState } from '../../utils';
 export const IssueListItemImage = ({
   state = IssuesState.open,
   pull_request = null,
+  draft = false,
 }: {
   state?: IssuesState;
   pull_request?: IssuePullRequest | null;
+  draft?: boolean | undefined;
 }) => {
-  if (state !== IssuesState.closed) {
+  if (state === IssuesState.open) {
+    if (draft) {
+      return <PullRequestIcon color={theme.colors.grey} />;
+    }
     if (pull_request) {
       return <PullRequestIcon />;
     }

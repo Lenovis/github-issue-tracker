@@ -9,7 +9,7 @@ export * from './Icons';
 //IssueItems
 export * from './IssuesComponents/listItem';
 export * from './IssuesComponents/issuesFilterButton';
-export * from './IssuesComponents/issueListView';
+export { IssueList } from './IssuesComponents/issueListView';
 export * from './IssuesComponents/issueListItemIcon';
 //InfoMessage
 export * from './messages/ToastMessage';
