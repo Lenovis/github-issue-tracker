@@ -45,3 +45,4 @@ Screen contains:
 * Better error handling system;
 * Better pagination;
 * Overall open and closed issues count in list header.
+* Check with closed issues dates. Is it needed to show issue open date or issue close date?
