@@ -4,9 +4,10 @@ import styled from 'styled-components/native';
 import { Issue } from '../../types';
 import { formatDistance } from 'date-fns';
 import { IssueListItemImage } from './issueListItemIcon';
+import { theme } from '../../assets/theme';
 
 export const IssuesListItem = ({ issue }: { issue: Issue }) => {
-  const { title, number, user, pull_request, created_at, state } = issue;
+  const { title, number, user, pull_request, created_at, state, draft } = issue;
 
   const { login: userLogin } = user;
 
@@ -19,7 +20,11 @@ export const IssuesListItem = ({ issue }: { issue: Issue }) => {
   return (
     <Container>
       <IconWrapper>
-        <IssueListItemImage state={state} pull_request={pull_request} />
+        <IssueListItemImage
+          state={state}
+          pull_request={pull_request}
+          draft={draft}
+        />
       </IconWrapper>
       <InfoWrapper>
         <HeaderWeapper>
@@ -35,7 +40,7 @@ export const IssuesListItem = ({ issue }: { issue: Issue }) => {
 
 const Container = styled.View`
   flex-direction: row;
-  border-color: ${({ theme }) => theme.colors.white};
+  border-color: ${theme.colors.white};
   border-bottom-width: 1px;
   min-height: 40px;
   padding: 10px;
@@ -47,7 +52,7 @@ const HeaderWeapper = styled.View`
 `;
 
 const HeaderText = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${theme.colors.white};
   font-weight: bold;
 `;
 
@@ -56,7 +61,7 @@ const BodyWrapper = styled.View`
 `;
 
 const BodyText = styled.Text`
-  color: ${({ theme }) => theme.colors.lightGrey};
+  color: ${theme.colors.lightGrey};
 `;
 
 const IconWrapper = styled.View`

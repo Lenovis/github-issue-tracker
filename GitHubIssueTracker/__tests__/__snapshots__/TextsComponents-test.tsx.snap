@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly <HeaderText text="test" /> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 40,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 40,
+      },
+    ]
+  }
+>
+  <Text
+    numberOfLines={1}
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+</View>
+`;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { theme } from '../../assets/theme';
 
 export const HeaderText = ({
   text,
@@ -14,7 +15,7 @@ export const HeaderText = ({
 );
 
 const HeaderStyledText = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${theme.colors.white};
   text-align: center;
   font-weight: bold;
   font-size: 20px;

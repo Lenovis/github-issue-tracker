@@ -1,0 +1,846 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly <FilterButton text="test"/> 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+        },
+      ]
+    }
+  />
+  <Text
+    selected={false}
+    style={
+      Array [
+        Object {
+          "color": "#94988e",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+  <Text
+    selected={false}
+    style={
+      Array [
+        Object {
+          "color": "#94988e",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+     
+  </Text>
+</View>
+`;
+
+exports[`renders correctly <FooterComponentView hasPrevPage={false} hasNextPage={false} issuesCurrentPage={1}/> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginBottom": 0,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    1 page
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders correctly <FooterComponentView hasPrevPage={false} hasNextPage={true} issuesCurrentPage={1}/> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginBottom": 0,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 12,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    1 page
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders correctly <FooterComponentView hasPrevPage={true} hasNextPage={false} issuesCurrentPage={1}/> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginBottom": 0,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    1 page
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 12,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly <FooterComponentView hasPrevPage={true} hasNextPage={true} issuesCurrentPage={1}/> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginBottom": 0,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 12,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    1 page
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 12,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly gettingData: false issueList(issues: []) 1`] = `<View />`;
+
+exports[`renders correctly gettingData: false issueList(issues: [{issue}]) 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#FFFFFF",
+          "flexDirection": "row",
+          "minHeight": 40,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#438440",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "marginBottom": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#D3D3D3",
+              },
+            ]
+          }
+        >
+          #undefined opened less than a minute ago by undefined
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "marginBottom": 0,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+        ]
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      undefined page
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`renders correctly gettingData: true issueList(issues: []) 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "marginTop": 70,
+      },
+    ]
+  }
+>
+  <ActivityIndicator
+    size="large"
+  />
+</View>
+`;
+
+exports[`renders correctly gettingData: true issueList(issues: [{issue}]) 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "marginTop": 70,
+      },
+    ]
+  }
+>
+  <ActivityIndicator
+    size="large"
+  />
+</View>
+`;
+
+exports[`renders correctly issues list item icon 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#438440",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "FontAwesome",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: closed 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#9a76ef",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: closed, pull request 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#f24141",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: closed, pull request merged at 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#9a76ef",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: open 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#438440",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "FontAwesome",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: open, draft: true 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#94988e",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders correctly issues list item icon with state: open, pull request 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#438440",
+        "fontSize": 20,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;

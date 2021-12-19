@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
-import { theme as importedTheme } from '../../../assets/theme';
+import { theme } from '../../../assets/theme';
 import {
   CheckCircleIcon,
   DotCircleIcon,
@@ -56,8 +56,8 @@ export const IssueView = () => {
             text="Open"
             icon={DotCircleIcon({
               color: isSelected(IssuesState.open)
-                ? importedTheme.colors.white
-                : importedTheme.colors.grey,
+                ? theme.colors.white
+                : theme.colors.grey,
             })}
             onPress={handleOpenPress}
             disabled={gettingData}
@@ -67,8 +67,8 @@ export const IssueView = () => {
             text="Closed"
             icon={CheckCircleIcon({
               color: isSelected(IssuesState.closed)
-                ? importedTheme.colors.white
-                : importedTheme.colors.grey,
+                ? theme.colors.white
+                : theme.colors.grey,
             })}
             onPress={handleClosedPress}
             disabled={gettingData}
@@ -82,12 +82,12 @@ export const IssueView = () => {
 };
 
 const Container = styled.ScrollView`
-  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  background-color: ${theme.colors.backgroundColor};
 `;
 
 const FilterContainer = styled.View`
   flex-direction: row;
-  background-color: ${({ theme }) => theme.colors.blueGrey};
+  background-color: ${theme.colors.blueGrey};
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 `;
