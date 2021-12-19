@@ -60,6 +60,7 @@ export const IssueRepoView = () => {
                 onChangeText={handleChange('repo')}
                 autoCorrect={false}
                 autoCapitalize="none"
+                placeholder="Repo name"
               />
             </InputContainer>
             <ButtonWrapper>

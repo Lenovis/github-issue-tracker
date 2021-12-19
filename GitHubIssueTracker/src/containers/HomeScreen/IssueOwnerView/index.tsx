@@ -34,6 +34,7 @@ export const IssueOwnerView = () => {
                 onChangeText={handleChange('owner')}
                 autoCorrect={false}
                 autoCapitalize="none"
+                placeholder="Repo owner"
               />
             </InputContainer>
             <ButtonWrapper>
