@@ -35,7 +35,7 @@ Screen contains:
 
 
 # ⚠️ Must TODO:
-* 👷 App testing.
+* 👷 Better app testing.
 
 # 🎨 Things to improve:
 * Use theme provider from styled-components. Now removed for app testing;
