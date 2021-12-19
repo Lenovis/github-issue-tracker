@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders correctly <FilterButton text="test"/> 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+        },
+      ]
+    }
+  />
+  <Text
+    selected={false}
+    style={
+      Array [
+        Object {
+          "color": "#94988e",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+  <Text
+    selected={false}
+    style={
+      Array [
+        Object {
+          "color": "#94988e",
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+     
+  </Text>
+</View>
+`;
+
 exports[`renders correctly <FooterComponentView hasPrevPage={false} hasNextPage={false} issuesCurrentPage={1}/> 1`] = `
 <View
   style={

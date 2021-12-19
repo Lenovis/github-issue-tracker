@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly <ToastMessage infoText="test" show={false}/> 1`] = `null`;
+
+exports[`renders correctly <ToastMessage infoText="test" show={true}/> 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "bottom": 100,
+        "left": 0,
+        "minHeight": 32,
+        "position": "absolute",
+        "right": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "#000000",
+          "borderRadius": 100,
+          "justifyContent": "center",
+          "minHeight": 32,
+          "paddingBottom": 5,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "paddingBottom": 0,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 0,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      test
+    </Text>
+  </View>
+</View>
+`;

@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer';
 import {
   CheckCircleIcon,
   DotCircleIcon,
+  FilterButton,
   IssueListItemImage,
   MergedRequestIcon,
   PullRequestIcon,
@@ -17,11 +18,9 @@ import { theme } from '../src/assets/theme';
 import {
   FooterComponentView,
   IssueList,
-  ListPagination,
 } from '../src/components/IssuesComponents/issueListView';
 import * as reactRedux from 'react-redux';
 import { cleanup } from '@testing-library/react-native';
-import { View } from 'react-native';
 
 afterEach(cleanup);
 
@@ -269,5 +268,12 @@ test('renders correctly <FooterComponentView hasPrevPage={false} hasNextPage={tr
       />,
     )
     .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+//---issueFilterButton
+
+test('renders correctly <FilterButton text="test"/>', () => {
+  const tree = renderer.create(<FilterButton text="test" />).toJSON();
   expect(tree).toMatchSnapshot();
 });
