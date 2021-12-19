@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
 import { BackButton, IssuesListItem, NextButton } from '..';
@@ -40,7 +40,7 @@ export const FooterComponentView = ({
   </FooterComponent>
 );
 
-const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
+export const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
   const dispatch = useDispatch();
 
   const repo = useSelector(selectors.repo.getRepoName);
@@ -83,7 +83,9 @@ const ListPagination = ({ hasPages }: { hasPages: boolean }) => {
   return null;
 };
 
-export const handleIssuesList = (gettingData: boolean, issues: Issue[]) => {
+export const IssueList = (issues: Issue[]) => {
+  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
+
   if (gettingData) {
     return (
       <ActivityIndicatorWrapper>
@@ -92,19 +94,13 @@ export const handleIssuesList = (gettingData: boolean, issues: Issue[]) => {
     );
   }
   return (
-    <>
+    <View>
       {issues.map((issue, index) => (
         <IssuesListItem issue={issue} key={index} />
       ))}
       <ListPagination hasPages={issues.length > 0} />
-    </>
+    </View>
   );
-};
-
-export const IssueList = (issues: Issue[]) => {
-  const gettingData = useSelector(selectors.ui.getRepoIssuesOnSync);
-
-  return handleIssuesList(gettingData, issues);
 };
 
 const ActivityIndicatorWrapper = styled.View`

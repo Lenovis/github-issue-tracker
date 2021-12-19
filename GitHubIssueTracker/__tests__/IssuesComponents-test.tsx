@@ -16,8 +16,14 @@ import { IssuePullRequest } from '../src/types';
 import { theme } from '../src/assets/theme';
 import {
   FooterComponentView,
-  handleIssuesList,
+  IssueList,
+  ListPagination,
 } from '../src/components/IssuesComponents/issueListView';
+import * as reactRedux from 'react-redux';
+import { cleanup } from '@testing-library/react-native';
+import { View } from 'react-native';
+
+afterEach(cleanup);
 
 //---issueListItemicon
 test('renders correctly issues list item icon', () => {
@@ -126,9 +132,92 @@ test('given state closed and header with merged time returns <MergedRequestIcon 
 });
 
 //---issueListView
-test('renders correctly handleIssuesList(gettingData: true, issues: [])', () => {
-  const tree = renderer.create(handleIssuesList(true, [])).toJSON();
-  expect(tree).toMatchSnapshot();
+
+jest.mock('react-redux', () => ({
+  useSelector: jest.fn(),
+  useDispatch: jest.fn(),
+}));
+
+describe('renders correctly gettingData: true', () => {
+  const useDispatchMock = jest.spyOn(reactRedux, 'useDispatch');
+  const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
+
+  beforeEach(() => {
+    useDispatchMock.mockImplementation();
+    useSelectorMock.mockImplementation(selector => selector(mockStore));
+  });
+  afterEach(() => {
+    useDispatchMock.mockClear();
+    useSelectorMock.mockClear();
+  });
+
+  const mockStore = {
+    ui: { repoIssuesOnSync: true },
+  };
+
+  it('issueList(issues: [])', () => {
+    const tree = renderer.create(IssueList([])).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('issueList(issues: [{issue}])', () => {
+    const tree = renderer
+      .create(
+        IssueList([
+          {
+            id: 1,
+            state: IssuesState.open,
+            user: {},
+            pull_request: {
+              merged_at: new Date(),
+            },
+          },
+        ]),
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('renders correctly gettingData: false', () => {
+  const useDispatchMock = jest.spyOn(reactRedux, 'useDispatch');
+  const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
+
+  beforeEach(() => {
+    useDispatchMock.mockImplementation();
+    useSelectorMock.mockImplementation(selector => selector(mockStore));
+  });
+  afterEach(() => {
+    useDispatchMock.mockClear();
+    useSelectorMock.mockClear();
+  });
+
+  const mockStore = {
+    ui: { repoIssuesOnSync: false },
+  };
+
+  it('issueList(issues: [])', () => {
+    const tree = renderer.create(IssueList([])).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('issueList(issues: [{issue}])', () => {
+    const tree = renderer
+      .create(
+        IssueList([
+          {
+            id: 1,
+            state: IssuesState.open,
+            user: {},
+            pull_request: {
+              merged_at: new Date(),
+            },
+          },
+        ]),
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 test('renders correctly <FooterComponentView hasPrevPage={true} hasNextPage={true} issuesCurrentPage={1}/>', () => {
